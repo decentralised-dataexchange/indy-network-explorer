@@ -72,14 +72,14 @@
             </div>
           </div>
   
-          <div class="panel panel-side connect">
+          <div class="panel panel-default">
             <div class="panel-heading">
               <h2>
                 <span class="fa fa-plug"></span>
                 Connect to the Network
               </h2>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" style="height: 142px;">
               <p>
                 Download the genesis transaction file to connect to the network.
               </p>
@@ -113,14 +113,14 @@
               <template v-if="status && status.rows">
                 <div class="panel-body node-status" v-for="row in status.rows.reverse()">
                   <div class="node-status-left">
-                    <div class="node-indicator">
+                    <div class="node-indicator" :style="[row.name === 'REDPILLLINPRONode5' ?  { width: '130px' }  : '']">
                       <a target="_blank" :href="row.nodeOperator.website"><img class="node-operator-logo" :src="row.nodeOperator.logoUrl" :alt="row.nodeOperator.label"></a>
                     </div>
                   </div>
                   <div class="node-status-right">
                     <dl class="props">
                       <dt>Node properties</dt>
-                      <dd class="node-alias"><label>Alias:</label> <code class="nodeval-alias">Node {{ row.nodeNumber }}</code></dd>
+                      <dd class="node-alias"><label>Alias:</label> <code class="nodeval-alias">{{ row.nodeOperator.label }}</code></dd>
                       <dd class="node-country"><label>Country:</label> <code class="nodeval-country">{{ row.nodeOperator.country }}</code></dd>
                       <dd class="node-did"><label>DID:</label> <code class="nodeval-did">{{ row.did }}</code></dd>
                       <dd class="node-state" v-if="row.state"><label>State:</label> <span
