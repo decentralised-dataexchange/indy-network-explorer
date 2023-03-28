@@ -1,0 +1,28 @@
+version: '3'
+services:
+
+  #
+  # Webserver
+  #
+  webserver:
+    image: von-network-base
+    command: ["python", "-m", "server.server"]
+    environment:
+      - GENESIS_URL=https://indy.igrant.io/genesis
+      - LEDGER_SEED=000000000000000000IGRANTTrustee1
+      - REGISTER_NEW_DIDS=True
+    networks:
+      - von
+    ports:
+      - ${WEB_SERVER_HOST_PORT:-9000}:8000
+    volumes:
+      - ./config:/home/indy/config
+      - ./server:/home/indy/server
+
+networks:
+  von:
+
+volumes:
+  client-data:
+  webserver-cli:
+  webserver-ledger:
