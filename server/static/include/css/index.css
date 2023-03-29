@@ -33,9 +33,7 @@ header {
 }
 
 .header-logo {
-  width: 210px;
-  height: 55px;
-  background: url("../images/iGrant.svg");
+  background: url("../images/nxd.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -62,6 +60,7 @@ header h1 a:hover {
 
 header p.lead {
   display: inline-block;
+  margin-left: 1rem;
 }
 
 header span.lead-title {
