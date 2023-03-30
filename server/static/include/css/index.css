@@ -447,6 +447,8 @@ h2 .fa {
   height: 90px;
   margin-right: auto;
   width: 180px;
+  display: flex;
+  align-items: center;
 }
 
 .node-status-right {
