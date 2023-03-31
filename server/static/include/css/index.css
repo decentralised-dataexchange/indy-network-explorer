@@ -23,8 +23,8 @@ h6 {
 
 
 header {
-  background-color: #000;
-  border-bottom: 2px solid #000000;
+  background-color: #00182c;
+  border-bottom: 2px solid #00182c;
   color: #ffffff;
   padding: 10px 2rem 10px 2.2rem;
   display: flex;
@@ -33,7 +33,7 @@ header {
 }
 
 .header-logo {
-  background: url("../images/nxd.png");
+  background: url("../images/nxd.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -315,7 +315,7 @@ h2 .fa {
 }
 
 .panel-default .panel-heading {
-  background: #000;
+  background: #00182c;
   border-bottom: 1px solid #eee;
   color: #fafaec;
 }
@@ -557,7 +557,7 @@ h2 .fa {
 }
 
 .pagination .page-item.active {
-  background-color: #000000;
+  background-color: #00182c;
   font-weight: bold;
 }
 
@@ -651,7 +651,7 @@ h2 .fa {
 }
 
 .ledger-entry-title {
-  background: rgb(0, 0, 0);
+  background: #00182c;
   border-radius: 4px;
   color: #ffffff;
   font-size: 100%;
