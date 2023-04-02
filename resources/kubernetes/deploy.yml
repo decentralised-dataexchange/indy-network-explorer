@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: indy-network-explorer
+  name: indy-network-explorer
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: indy-network-explorer
+  template:
+    metadata:
+      labels:
+        app: indy-network-explorer
+    spec:
+      containers:
+        - image: eu.gcr.io/jenkins-189019/indy-network-explorer:0.0.1
+          command: ["python", "-m", "server.server"]
+          env:
+            - name: LEDGER_SEED
+              valueFrom:
+                secretKeyRef:
+                  key: LEDGER_SEED
+                  name: indy-network-trustee-seed
+            - name: REGISTER_NEW_DIDS
+              value: "True"
+          imagePullPolicy: IfNotPresent
+          name: indy-network-explorer
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources: {}
+      # Note: Ledger pool initialisation failed, when volume mount configured in pod
+      #     volumeMounts:
+      #       - mountPath: /home/indy/ledger
+      #         name: indy-volume
+      # volumes:
+      #   - name: indy-volume
+      #     persistentVolumeClaim:
+      #       claimName: indy-network-explorer-pvc
