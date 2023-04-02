@@ -5,10 +5,11 @@ services:
   # Webserver
   #
   webserver:
-    image: von-network-base
+    build:
+      context: .
+      dockerfile: ./resources/docker/Dockerfile
     command: ["python", "-m", "server.server"]
     environment:
-      - GENESIS_URL=https://indy.igrant.io/genesis
       - LEDGER_SEED=000000000000000000IGRANTTrustee1
       - REGISTER_NEW_DIDS=True
     networks:
