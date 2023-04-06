@@ -152,7 +152,7 @@
                 </p>
               </div>
               <template v-if="status && status.rows">
-                <div class="panel-body node-status" v-for="row in status.rows.reverse()">
+                <div class="panel-body node-status" v-for="row in status.rows">
                   <div class="node-status-left">
                     <div class="node-indicator">
                       <a target="_blank" :href="row.nodeOperator.website"><img class="node-operator-logo" :src="row.nodeOperator.logoUrl" :alt="row.nodeOperator.label"></a>
